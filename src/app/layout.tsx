@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Image from "next/image";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +30,56 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="text-white font-extrabold bg-black h-24 flex items-center justify-center gap-3">
+          <div className="">
+            <Image
+              src="/assets/logo.png"
+              width={70}
+              height={70}
+              alt="Picture of the author"
+              className=""
+            />
+          </div>
+          ALFARILLO GROUP
+        </div>
+        <div className="text-white  flex  justify-center space-x-10 py-4 px-4">
+          <Link
+            href="/components/inicio"
+            className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+          >
+            INICIO
+          </Link>
+
+          <Link
+            href="/components/proyectos"
+            className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+          >
+            QUIENES SOMOS?
+          </Link>
+
+          <Link
+            href="/components/quienesSomos"
+            className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+          >
+            PROYECTOS
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-6  p-2 gap-2 h-screen ">
+          <div className="col-span-4  space-y-3  ">
+            <div className=" border rounded-md h-full  flex flex-col border-black p-4">
+              {children}
+            </div>
+          </div>
+          <div className="col-span-2  p-4  border rounded-md border-black">
+            div 2
+          </div>
+        </div>
+        <div className="bg-green-900 flex justify-center h-8 items-center">
+          <p >
+            aviso de copi right , pagina web creada por alafarillo group
+          </p>
+        </div>
       </body>
     </html>
   );
