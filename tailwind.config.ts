@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        jaro: ['Jaro', 'sans-serif'], 
+      },
+      
     },
   },
   plugins: [],
